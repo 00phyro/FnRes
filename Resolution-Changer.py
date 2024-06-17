@@ -13,23 +13,28 @@ def set_read_only(file_path):
 
 try:
     remove_read_only(DIRECTORY)
-    print('Read Only is off')
     
     with open(DIRECTORY, 'r') as file:
         content = file.read()
 
 
     print(""" 
-$$\   $$\ $$\     $$\ $$$$$$$\   $$$$$$\          $$$$$$$\  
-$$ |  $$ |\$$\   $$  |$$  __$$\ $$  __$$\         $$  __$$\ 
-$$ |  $$ | \$$\ $$  / $$ |  $$ |$$ /  $$ |        $$ |  $$ |
-$$$$$$$$ |  \$$$$  /  $$$$$$$  |$$ |  $$ |$$$$$$\ $$$$$$$  |
-$$  __$$ |   \$$  /   $$  __$$< $$ |  $$ |\______|$$  ____/ 
-$$ |  $$ |    $$ |    $$ |  $$ |$$ |  $$ |        $$ |      
-$$ |  $$ |    $$ |    $$ |  $$ | $$$$$$  |        $$ |      
-\__|  \__|    \__|    \__|  \__| \______/         \__|      
+    $$\   $$\ $$\     $$\ $$$$$$$\   $$$$$$\          $$$$$$$\  
+    $$ |  $$ |\$$\   $$  |$$  __$$\ $$  __$$\         $$  __$$\ 
+    $$ |  $$ | \$$\ $$  / $$ |  $$ |$$ /  $$ |        $$ |  $$ |
+    $$$$$$$$ |  \$$$$  /  $$$$$$$  |$$ |  $$ |$$$$$$\ $$$$$$$  |
+    $$  __$$ |   \$$  /   $$  __$$< $$ |  $$ |\______|$$  ____/ 
+    $$ |  $$ |    $$ |    $$ |  $$ |$$ |  $$ |        $$ |      
+    $$ |  $$ |    $$ |    $$ |  $$ | $$$$$$  |        $$ |      
+    \__|  \__|    \__|    \__|  \__| \______/         \__|      
                                                             
-""")
+ ⌜―――――――――――――――――――――――――――――――――――――――――――――――――――――⌝
+    ┇      [Github]  https://github.com/HyRo-P             ┇
+    ┇      [Telegram] @Hyro_99                             ┇
+    ⌞―――――――――――――――――――――――――――――――――――――――――――――――――――――⌟
+          
+          
+          """)
 
     Resolution = input('Enter the X value (Exm: 1920x1080): ').split('x')
     ResX = Resolution[0]
@@ -45,7 +50,8 @@ $$ |  $$ |    $$ |    $$ |  $$ | $$$$$$  |        $$ |
         
 
     set_read_only(DIRECTORY)
-    print('Read-Only is on')
+
+    
 
 except FileNotFoundError:
     print(f"Error: File '{DIRECTORY}' does not exist.")
@@ -53,6 +59,5 @@ except IOError:
     print("Error: A problem occurred while reading or writing the file.")
 except ValueError:
     print("Error: Please enter valid integer values for the resolutions.")
-except Exception as e:
-    print(f"An unexpected error occurred: {e}")
-
+except Exception:
+    print("Error, remember to put the 'x' between the two numbers, without spaces")
