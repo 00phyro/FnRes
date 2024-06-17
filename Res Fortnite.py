@@ -21,10 +21,13 @@ try:
     NewResX = int(input('Enter the new X value: '))
     NewResY = int(input('Enter the new Y value: '))
 
-    new_content = content.replace(f"ResolutionSizeX={OldResX}", f"ResolutionSizeY={OldResY}").replace(f"ResolutionSizeX={NewResX}", f"ResolutionSizeY={NewResY}")
+    new_contentX = content.replace(f"ResolutionSizeX={OldResX}", f"ResolutionSizeX={NewResX}")
+    new_contentY = content.replace(f"ResolutionSizeY={OldResY}", f"ResolutionSizeY={NewResY}")
+    
     
     with open(Directory, "w") as file:
-        file.write(new_content)
+        file.write(new_contentX)
+        file.write(new_contentY)
 
     set_read_only(Directory)
     print('Read-Only is on')
